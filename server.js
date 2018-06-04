@@ -6,14 +6,13 @@ var app = express();
 const pageName = "Stewart Boyd";
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + "/public"));
-app.get("/dog", (req, res) => {
+app.get("/", (req, res) => {
 
     //res.send('<h1>hello express</h1>');
     var content = {pageName: "Stewart Boyd",
         currentYear: new Date().getFullYear(),
         welcomeMessage: "Good to meet you"};
-    console.log(content);
-    app.render("home.hbs", content);
+    res.render("home.hbs", content);
 });
 
 app.get("/about", (req, res) => {
