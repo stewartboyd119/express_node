@@ -13,10 +13,10 @@ hbs.registerPartials(__dirname + "/views/partials");
 app.use(express.static(__dirname + "/public"));
 app.use((req, res, next) => {
     var now = new Date().toString();
-    var log = `${now} ${req.method} ${req.url}`;
+    var log = `${now} ${req.method} ${req.url}\n`;
     fs.writeFile(__dirname + "/output.txt", log, {flag: "a"}, (err) => {
         if (err) throw err;
-        console.log('file written too');
+        console.log(log);
         next();
     })
 })
