@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+// heroku will set this environment varilable (or allows it to still run locally)
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -46,6 +48,6 @@ app.get("/about", (req, res) => {
 app.get("/bad", (req, res) => {
     res.send({errorMessage: "Unable to handle Requesto"});
 })
-app.listen(3000, () => {
-    console.log("Server is up");
+app.listen(port, () => {
+    console.log(`Server is up ${port}`);
 });
