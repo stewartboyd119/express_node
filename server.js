@@ -27,13 +27,13 @@ hbs.registerHelper("screamIt", (element) => element.toUpperCase());
 app.get("/", (req, res) => {
 
     //res.send('<h1>hello express</h1>');
-    var content = {pageName: "Stewart Boyd",
+    var content = {pageName: "Home: Stwart Boyd",
         welcomeMessage: "Good to meet you"};
     res.render("home.hbs", content);
 });
 
 app.get("/project", (req, res) => {
-    res.render("project.hbs");
+    res.render("project.hbs", {pageName: "Projects"});
 });
 
 app.get("/about", (req, res) => {
@@ -42,7 +42,7 @@ app.get("/about", (req, res) => {
     // Render allows your to render using your view engine 
     // a view. Views for view engines are by default looked for
     // in the view directory
-    res.render('about.hbs', {pageName: "Stewart Boyd"});
+    res.render('about.hbs', {pageName: "About"});
 });
 
 app.get("/bad", (req, res) => {
