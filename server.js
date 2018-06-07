@@ -32,6 +32,10 @@ app.get("/", (req, res) => {
     res.render("home.hbs", content);
 });
 
+app.get("/project", (req, res) => {
+    res.render("project.hbs");
+});
+
 app.get("/about", (req, res) => {
     //res.send('<h1>hello express</h1>');
     //res.send("<h1>this is the about</h1>");
